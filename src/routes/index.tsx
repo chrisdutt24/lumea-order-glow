@@ -21,7 +21,7 @@ const ingredients = [
   { name: "Vitamin B6", amount: "1,4 mg", claim: "trägt zur Regulierung der Hormontätigkeit bei und zur Verringerung von Müdigkeit." },
   { name: "Magnesium", amount: "150 mg", claim: "trägt zu einer normalen psychischen Funktion und normalen Muskelfunktion bei." },
   { name: "Vitamin D3", amount: "20 µg", claim: "trägt zur Erhaltung normaler Knochen und Muskelfunktion bei." },
-  { name: "Traubensilberkerze", amount: "6,5 mg Extrakt", claim: "eine traditionell genutzte Pflanze, sorgfältig dosiert." },
+  { name: "Traubensilberkerze", amount: "6,5 mg Extrakt", claim: "ist eine traditionell genutzte Pflanze, sorgfältig dosiert." },
 ];
 
 function Index() {
