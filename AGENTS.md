@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Shared-password unlock and lock navigate with a fresh document request so protected loaders always verify the current encrypted session instead of cached route state.

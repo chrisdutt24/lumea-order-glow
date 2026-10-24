@@ -33,7 +33,7 @@ function Fachkreise() {
             <p className="mt-2 text-muted-foreground">Verzehrempfehlung: 1 Kapsel täglich mit Flüssigkeit. Vegan, hormonfrei, hergestellt in Deutschland.</p>
           </div>
           <button
-            onClick={async () => { await lock(); await router.navigate({ to: "/fachkreise-zugang" }); }}
+            onClick={async () => { await lock(); await router.navigate({ to: "/fachkreise-zugang", reloadDocument: true }); }}
             className="shrink-0 rounded-full border px-4 py-2 text-sm hover:bg-muted"
           >Abmelden</button>
         </div>
