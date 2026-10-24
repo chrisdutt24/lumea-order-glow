@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BestellenRouteImport } from './routes/bestellen'
 import { Route as DankeRouteImport } from './routes/danke'
+import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as FachkreiseRouteImport } from './routes/fachkreise'
 import { Route as FachkreiseZugangRouteImport } from './routes/fachkreise-zugang'
 
@@ -30,6 +31,11 @@ const DankeRoute = DankeRouteImport.update({
   path: '/danke',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DatenschutzRoute = DatenschutzRouteImport.update({
+  id: '/datenschutz',
+  path: '/datenschutz',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FachkreiseRoute = FachkreiseRouteImport.update({
   id: '/fachkreise',
   path: '/fachkreise',
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/bestellen': typeof BestellenRoute
   '/danke': typeof DankeRoute
+  '/datenschutz': typeof DatenschutzRoute
   '/fachkreise': typeof FachkreiseRoute
   '/fachkreise-zugang': typeof FachkreiseZugangRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/bestellen': typeof BestellenRoute
   '/danke': typeof DankeRoute
+  '/datenschutz': typeof DatenschutzRoute
   '/fachkreise': typeof FachkreiseRoute
   '/fachkreise-zugang': typeof FachkreiseZugangRoute
 }
@@ -60,20 +68,33 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/bestellen': typeof BestellenRoute
   '/danke': typeof DankeRoute
+  '/datenschutz': typeof DatenschutzRoute
   '/fachkreise': typeof FachkreiseRoute
   '/fachkreise-zugang': typeof FachkreiseZugangRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/bestellen' | '/danke' | '/fachkreise' | '/fachkreise-zugang'
+    | '/'
+    | '/bestellen'
+    | '/danke'
+    | '/datenschutz'
+    | '/fachkreise'
+    | '/fachkreise-zugang'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/bestellen' | '/danke' | '/fachkreise' | '/fachkreise-zugang'
+  to:
+    | '/'
+    | '/bestellen'
+    | '/danke'
+    | '/datenschutz'
+    | '/fachkreise'
+    | '/fachkreise-zugang'
   id:
     | '__root__'
     | '/'
     | '/bestellen'
     | '/danke'
+    | '/datenschutz'
     | '/fachkreise'
     | '/fachkreise-zugang'
   fileRoutesById: FileRoutesById
@@ -82,6 +103,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BestellenRoute: typeof BestellenRoute
   DankeRoute: typeof DankeRoute
+  DatenschutzRoute: typeof DatenschutzRoute
   FachkreiseRoute: typeof FachkreiseRoute
   FachkreiseZugangRoute: typeof FachkreiseZugangRoute
 }
@@ -109,6 +131,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DankeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/datenschutz': {
+      id: '/datenschutz'
+      path: '/datenschutz'
+      fullPath: '/datenschutz'
+      preLoaderRoute: typeof DatenschutzRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fachkreise': {
       id: '/fachkreise'
       path: '/fachkreise'
@@ -130,6 +159,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BestellenRoute: BestellenRoute,
   DankeRoute: DankeRoute,
+  DatenschutzRoute: DatenschutzRoute,
   FachkreiseRoute: FachkreiseRoute,
   FachkreiseZugangRoute: FachkreiseZugangRoute,
 }

@@ -10,3 +10,6 @@
 <!-- LOVABLE:END -->
 
 - Shared-password unlock and lock navigate with a fresh document request so protected loaders always verify the current encrypted session instead of cached route state.
+- Tracking lives in a browser-effect-mounted global consent component and a pure controller; consent is read on each committed navigation and synchronized across tabs to avoid cached permission and duplicate events.
+- Placeholder tracking is strictly local-only, with no provider SDK or network transport; replacing IDs must not activate transmission because the health-related site requires eligibility review first.
+- Persist consent notice, visitor reference, timestamp and choice history locally; preserve acceptance evidence on withdrawal and keep analytics separate from marketing.
