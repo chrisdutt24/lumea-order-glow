@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { Button } from "@/components/ui/button";
 
 export function SiteFrame({ children }: { children: ReactNode }) {
   return (
@@ -16,6 +17,10 @@ export function SiteFrame({ children }: { children: ReactNode }) {
         <div className="mx-auto max-w-6xl px-6 py-10 text-xs leading-relaxed text-muted-foreground space-y-2">
           <p>Lumea Health GmbH, Berlin · Nahrungsergänzungsmittel. Die angegebene empfohlene tägliche Verzehrmenge darf nicht überschritten werden. Nahrungsergänzungsmittel sind kein Ersatz für eine ausgewogene und abwechslungsreiche Ernährung und eine gesunde Lebensweise. Außerhalb der Reichweite von kleinen Kindern lagern.</p>
           <p>Bei anhaltenden oder starken Beschwerden sprich bitte mit deiner Ärztin oder deinem Arzt.</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link to="/datenschutz" className="underline">Datenschutz</Link>
+            <Button variant="link" size="sm" className="h-auto p-0 text-xs" onClick={() => window.dispatchEvent(new Event("lumea-cookie-settings"))}>Cookie-Einstellungen</Button>
+          </div>
         </div>
       </footer>
     </div>
